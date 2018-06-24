@@ -1,0 +1,62 @@
+[
+  {
+    "id":"item_one",
+    "title": "Mindblowing",
+    "type": "Partywear Sarees",
+    "price": "Flat Rs 199",
+    "discount": "<b>70%</b> <br> OFF",
+    "stocks": "BUY NOW - LIMITED STOCKS LEFT",
+    "ribbon_msg": "EARN UP TO RS 500/PIECE",
+    "bottom_title": "Stylish & Ethnic Lehenga Choli",
+    "bottom_sub_title": "10 designs starting at <b>Rs. 1082</b>",
+    "banner_url": "https://lqp-imgs.s3-ap-south-1.amazonaws.com/faceview/b3g/cc/ae/imgs/nt/1526448186735_collection_poster.jpeg"
+  },
+  {
+    "id":"item_two",
+    "title": "Mindblowing",
+    "type": "Partywear Sarees",
+    "price": "Flat Rs 199",
+    "discount": "<b>60%</b> <br> OFF",
+    "stocks": "BUY NOW - LIMITED STOCKS LEFT",
+    "ribbon_msg": "Earn upto Rs 500 / piece",
+    "bottom_title": "Stylish & Ethnic Lehenga Choli",
+    "bottom_sub_title": "10 designs starting at <b>Rs. 1082</b>",
+    "banner_url": "https://lqp-imgs.s3-ap-south-1.amazonaws.com/faceview/b3g/cc/ae/imgs/nt/1526448186735_collection_poster.jpeg"
+  },
+  {
+    "id":"item_three",
+    "title": "Mindblowing",
+    "type": "Partywear Sarees",
+    "price": "Flat Rs 199",
+    "discount": "<b>50%</b> <br> OFF",
+    "stocks": "BUY NOW - LIMITED STOCKS LEFT",
+    "ribbon_msg": "EARN UP TO RS 500/PIECE",
+    "bottom_title": "Stylish & Ethnic Lehenga Choli",
+    "bottom_sub_title": "10 designs starting at <b>Rs. 1082</b>",
+    "banner_url": "https://lqp-imgs.s3-ap-south-1.amazonaws.com/faceview/b3g/cc/ae/imgs/nt/1526448186735_collection_poster.jpeg"
+  },
+  {
+    "id":"item_four",
+    "title": "Mindblowing",
+    "type": "Partywear Sarees",
+    "price": "Flat Rs 199",
+    "discount": "<b>Hot</b> <br> sale",
+    "stocks": "BUY NOW - LIMITED STOCKS LEFT",
+    "ribbon_msg": "EARN UP TO RS 500/PIECE",
+    "bottom_title": "Stylish & Ethnic Lehenga Choli",
+    "bottom_sub_title": "10 designs starting at <b>Rs. 1082</b>",
+    "banner_url": "https://lqp-imgs.s3-ap-south-1.amazonaws.com/faceview/b3g/cc/ae/imgs/nt/1526448186735_collection_poster.jpeg"
+  },
+  {
+    "id":"item_five",
+    "title": "Mindblowing",
+    "type": "Partywear Sarees",
+    "price": "Flat Rs 199",
+    "discount": "<b>Hot</b> <br> sale",
+    "stocks": "BUY NOW - LIMITED STOCKS LEFT",
+    "ribbon_msg": "EARN UP TO RS 500/PIECE",
+    "bottom_title": "Stylish & Ethnic Lehenga Choli",
+    "bottom_sub_title": "10 designs starting at <b>Rs. 1082</b>",
+    "banner_url": "https://lqp-imgs.s3-ap-south-1.amazonaws.com/faceview/b3g/cc/ae/imgs/nt/1526448186735_collection_poster.jpeg"
+  }
+]

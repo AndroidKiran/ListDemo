@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.text.Html" />
+
+        <variable
+            name="listItem"
+            type="com.demo.list.home.model.ListItem" />
+
+    </data>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@android:color/white"
+        app:cardCornerRadius="4dp"
+        app:cardPreventCornerOverlap="true"
+        app:cardUseCompatPadding="true"
+        app:contentPaddingBottom="4dp">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/iv_banner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:minHeight="200dp"
+                android:scaleType="center"
+                android:tint="#8C000000"
+                app:imageUrl="@{listItem.bannerUrl}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/left_container"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/txt_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{listItem.title}"
+                    android:textColor="@android:color/white"
+                    android:textSize="28sp"
+                    android:textStyle="italic"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="Mind Blowing" />
+
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/txt_type"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:text="@{listItem.type}"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp"
+                    android:textStyle="normal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/txt_title"
+                    tools:text="Partywear Sarees" />
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/txt_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_rounded_bar"
+                    android:gravity="center"
+                    android:minWidth="150dp"
+                    android:padding="12dp"
+                    android:text="@{listItem.price}"
+                    android:textColor="@android:color/white"
+                    android:textSize="16sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/txt_type"
+                    tools:text="Flat Rs. 199" />
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/txt_stock_msg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:text="@{listItem.stocks}"
+                    android:textColor="@android:color/white"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/txt_price"
+                    tools:text="BUY NOW - LIMITED STOCK LEFT" />
+
+            </android.support.constraint.ConstraintLayout>
+
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/txt_discount"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/bg_circle"
+                android:gravity="center"
+                android:text="@{Html.fromHtml(listItem.discount)}"
+                android:textColor="@android:color/white"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                app:bindPosition="@{listItem.position}"
+                app:layout_constraintBottom_toBottomOf="@id/iv_banner"
+                app:layout_constraintStart_toStartOf="@id/iv_banner"
+                tools:text="50 % off" />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/txt_ribbon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_rect"
+                android:drawablePadding="8dp"
+                android:gravity="center_vertical"
+                android:minWidth="200dp"
+                android:padding="8dp"
+                android:text="@{listItem.ribbonMsg}"
+                android:textColor="@android:color/white"
+                app:bindPosition="@{listItem.position}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/iv_banner"
+                tools:text="EARN UPTO Rs 500" />
+
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/txt_bottom_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:paddingBottom="4dp"
+                android:paddingTop="4dp"
+                android:text="@{listItem.bottomTitle}"
+                android:textColor="?attr/colorPrimaryDark"
+                android:textSize="20sp"
+                android:textStyle="normal"
+                app:layout_constraintStart_toStartOf="@id/iv_banner"
+                app:layout_constraintTop_toBottomOf="@id/txt_ribbon"
+                tools:text="Stylish &amp; Ethinic Lehenga Choli" />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/txt_bottom_sub_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="4dp"
+                android:text="@{Html.fromHtml(listItem.bottomSubTitle)}"
+                android:textColor="@android:color/black"
+                android:textSize="14sp"
+                android:textStyle="normal"
+                app:layout_constraintStart_toStartOf="@id/iv_banner"
+                app:layout_constraintTop_toBottomOf="@id/txt_bottom_title"
+                tools:text="10 designs starting at rs 200" />
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/btn_copy_to_shop"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                android:layout_marginEnd="2dp"
+                android:background="@drawable/btn_border"
+                android:paddingEnd="16dp"
+                android:paddingStart="16dp"
+                android:text="@string/str_copy_to_my_shop"
+                android:textColor="@color/colorPrimaryDark"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/btn_share"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_chainStyle="spread"
+                app:layout_constraintStart_toStartOf="@id/iv_banner"
+                app:layout_constraintTop_toBottomOf="@id/txt_bottom_sub_title"
+                tools:text="COPY TO MY SHOP" />
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/btn_share"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                android:background="@drawable/btn_solid"
+                android:drawableStart="@drawable/vc_whats_app"
+                android:paddingEnd="16dp"
+                android:paddingStart="16dp"
+                android:text="@string/str_share_to_earn"
+                android:textColor="@android:color/white"
+                app:layout_constraintBottom_toBottomOf="@+id/btn_copy_to_shop"
+                app:layout_constraintEnd_toEndOf="@id/iv_banner"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_chainStyle="spread"
+                app:layout_constraintStart_toEndOf="@+id/btn_copy_to_shop"
+                app:layout_constraintTop_toTopOf="@+id/btn_copy_to_shop"
+                tools:text="SHARE TO EARN" />
+
+        </android.support.constraint.ConstraintLayout>
+
+    </android.support.v7.widget.CardView>
+
+
+</layout>

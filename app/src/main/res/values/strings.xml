@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">List Demo</string>
+    <string name="str_copy_to_my_shop">Copy to my shop</string>
+    <string name="str_share_to_earn">Share to earn</string>
+    <string name="str_discount"> <b>%d %</b> \n off</string>
+    <string name="file_provider_authority" translatable="false">com.demo.list.fileprovider</string>
+    <string name="perm_ext">We use external storage to save review images</string>
+    <string name="str_cannot_save">Cannot save review.\nPlease check if storage is mounted.</string>
+</resources>

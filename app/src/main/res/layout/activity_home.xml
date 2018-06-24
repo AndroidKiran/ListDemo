@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="homeViewModel"
+            type="com.demo.list.home.viewmodel.HomeViewModel" />
+
+        <variable
+            name="recyclerViewConfig"
+            type="com.demo.list.binding.RecyclerViewConfiguration" />
+
+        <variable
+            name="toolbarConfig"
+            type="com.demo.list.binding.ToolbarConfiguration" />
+
+        <variable
+            name="snackBarConfig"
+            type="com.demo.list.binding.SnackbarConfiguration" />
+
+    </data>
+
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:snackBarBinding="@{snackBarConfig}">
+
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/appbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/ThemeOverlay.AppCompat.Light">
+
+
+            <include
+                layout="@layout/include_toolbar"
+                app:toolbarConfig="@{toolbarConfig}" />
+
+        </android.support.design.widget.AppBarLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            app:recyclerBinding="@{recyclerViewConfig}" />
+
+    </android.support.design.widget.CoordinatorLayout>
+</layout>
