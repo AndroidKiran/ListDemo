@@ -128,14 +128,17 @@ class HomeActivity : BaseActivity<ActivityHomeBinding, HomeViewModel>(), EasyPer
         try {
             val uriToImage = FileProvider.getUriForFile(
                     this@HomeActivity, getString(R.string.file_provider_authority), File(path))
-            val shareIntent = ShareCompat.IntentBuilder.from(this@HomeActivity)
-                    .setStream(uriToImage)
-                    .intent
 
-            shareIntent.setDataAndType(
-                    uriToImage,
-                    contentResolver.getType(uriToImage))
-            shareIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
+            val shareIntent = ShareCompat.IntentBuilder.from(this@HomeActivity)
+                    .setType("image/png")
+                    .setStream(uriToImage)
+                    .setChooserTitle(getString(R.string.str_share_to_earn))
+                    .setText(getString(R.string.str_share_to_earn))
+                    .setSubject(getString(R.string.str_share_to_earn))
+                    .intent
+                    .addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
+
+
             if (shareIntent.resolveActivity(packageManager) != null) {
                 startActivity(Intent.createChooser(shareIntent, getString(R.string.str_share_to_earn)))
             }
