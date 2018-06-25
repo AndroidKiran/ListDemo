@@ -5,5 +5,5 @@
     <string name="str_discount"> <b>%d %</b> \n off</string>
     <string name="file_provider_authority" translatable="false">com.demo.list.fileprovider</string>
     <string name="perm_ext">We use external storage to save images</string>
-    <string name="str_cannot_save">Cannot save review.\nPlease check if storage is mounted.</string>
+    <string name="str_cannot_save">Cannot save Image.\nPlease check if storage is mounted.</string>
 </resources>
