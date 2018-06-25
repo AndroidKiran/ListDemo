@@ -130,7 +130,7 @@ class HomeActivity : BaseActivity<ActivityHomeBinding, HomeViewModel>(), EasyPer
                     this@HomeActivity, getString(R.string.file_provider_authority), File(path))
 
             val shareIntent = ShareCompat.IntentBuilder.from(this@HomeActivity)
-                    .setType("image/png")
+                    .setType("image/jpg")
                     .setStream(uriToImage)
                     .setChooserTitle(getString(R.string.str_share_to_earn))
                     .setText(getString(R.string.str_share_to_earn))
