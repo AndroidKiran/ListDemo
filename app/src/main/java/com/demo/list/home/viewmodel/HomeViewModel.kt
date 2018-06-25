@@ -2,6 +2,7 @@ package com.demo.list.home.viewmodel
 
 import android.arch.lifecycle.LiveData
 import android.arch.lifecycle.MutableLiveData
+import android.databinding.ObservableBoolean
 import android.graphics.Bitmap
 import android.graphics.drawable.Drawable
 import android.os.Environment
@@ -9,6 +10,7 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.request.target.SimpleTarget
 import com.bumptech.glide.request.transition.Transition
 import com.demo.list.ListDemoApplication
+import com.demo.list.di.scope.PerActivity
 import com.demo.list.helper.*
 import com.demo.list.home.base.BaseViewModel
 import com.demo.list.home.model.ListItem
@@ -20,11 +22,13 @@ import java.io.FileOutputStream
 import java.io.IOException
 import javax.inject.Inject
 
-
+@PerActivity
 class HomeViewModel @Inject constructor(application: ListDemoApplication, private val schedulerProvider: SchedulerProvider) : BaseViewModel(application) {
 
     @Inject
     lateinit var gson: Gson
+
+    var isLoading = ObservableBoolean()
 
     var reload = MutableLiveData<Boolean>()
 
@@ -81,7 +85,9 @@ class HomeViewModel @Inject constructor(application: ListDemoApplication, privat
         } catch (e: IOException) {
             it.onError(e)
         }
-    }.getSingleAsync(schedulerProvider).responseToResult()
+    }.doOnSubscribe { isLoading.set(true) }
+            .doAfterTerminate { isLoading.set(false) }
+            .getSingleAsync(schedulerProvider).responseToResult()
             .onErrorResumeNext(Single.just(Result(null, NoSuchElementException())))
             .toLiveData()
 

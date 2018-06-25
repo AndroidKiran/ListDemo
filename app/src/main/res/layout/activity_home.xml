@@ -4,6 +4,8 @@
 
     <data>
 
+        <import type="android.view.View"/>
+
         <variable
             name="homeViewModel"
             type="com.demo.list.home.viewmodel.HomeViewModel" />
@@ -46,6 +48,13 @@
             android:layout_height="match_parent"
             app:layout_behavior="@string/appbar_scrolling_view_behavior"
             app:recyclerBinding="@{recyclerViewConfig}" />
+
+        <android.support.v4.widget.ContentLoadingProgressBar
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center"
+            android:visibility="@{homeViewModel.isLoading ? View.VISIBLE : View.GONE}"/>
 
     </android.support.design.widget.CoordinatorLayout>
 </layout>
